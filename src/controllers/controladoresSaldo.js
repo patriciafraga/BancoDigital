@@ -1,8 +1,5 @@
 let { contas, saques, depositos, transferencias } = require("../bancodedados");
 const {format} = require('date-fns');
-// let data = new Date();
-// const dataFormatada = format(data, "yyyy-MM-dd HH:mm:ss")
-// data = dataFormatada;
 
 const depositar = async (req, res) => {
   let { numero_conta, valor } = req.body;
