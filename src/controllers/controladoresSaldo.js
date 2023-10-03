@@ -1,9 +1,15 @@
 let { contas, saques, depositos, transferencias } = require("../bancodedados");
+const {format} = require('date-fns');
+// let data = new Date();
+// const dataFormatada = format(data, "yyyy-MM-dd HH:mm:ss")
+// data = dataFormatada;
 
 const depositar = async (req, res) => {
   let { numero_conta, valor } = req.body;
   valor = Number(valor);
-  const data = new Date().toLocaleString();
+  let data = new Date();
+const dataFormatada = format(data, "yyyy-MM-dd HH:mm:ss")
+data = dataFormatada;
   if (!numero_conta || !valor) {
     return res
       .status(400)
@@ -40,7 +46,9 @@ const depositar = async (req, res) => {
 const sacar = async (req, res) => {
   let { numero_conta, valor, senha } = req.body;
   valor = Number(valor);
-  const data = new Date().toLocaleString();
+  let data = new Date();
+const dataFormatada = format(data, "yyyy-MM-dd HH:mm:ss")
+data = dataFormatada;
   if (!numero_conta || !valor || !senha) {
     return res.status(400).json({
       mensagem: "O número da conta, o valor e a senha são obrigatórios!",
@@ -84,8 +92,10 @@ const sacar = async (req, res) => {
 
 const transferir = async (req, res) => {
   let { numero_conta_origem, numero_conta_destino, valor } = req.body;
+  let data = new Date();
+const dataFormatada = format(data, "yyyy-MM-dd HH:mm:ss")
+data = dataFormatada;
   valor = Number(valor);
-  const data = new Date().toLocaleString();
   if (!valor || valor <= 0) {
     return res.status(400).json({
       mensagem: "Digite um valor válido para transferência (maior que 0)",
@@ -133,7 +143,6 @@ const transferir = async (req, res) => {
 
 const apresentarSaldo = async (req, res) => {
   const { numero_conta } = req.query;
-  const data = new Date().toLocaleString();
   if (!numero_conta) {
     return res.status(400).json({
       mensagem: "O número da conta é obrigatório!",
