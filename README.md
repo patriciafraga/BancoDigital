@@ -11,6 +11,6 @@ Inicialmente, foi criado o arquivo index.js. Depois, para usar as funcionalidade
 Para testar e executar a API, foi utilizado o insomnia, como se pode ver no gif acima.
 
 <img width=90% align="center" src="https://github.com/patriciafraga/BancoDigital/blob/master/vscode.gif"/>
-Resumidadmente, o desenvolvimento do projeto contou com a elaboração de uma API RESTful de um banco digital e, para tanto, foram necessárias competências em javascript, node.js, manipulação de dados, manipulação de node modules como express, date-fns, criação de controladores, rotas, middlewares, funções assíncronas.
+Resumidamente, o desenvolvimento do projeto contou com a elaboração de uma API RESTful de um banco digital e, para tanto, foram necessárias competências em javascript, node.js, manipulação de dados, manipulação de node modules como express, date-fns, criação de controladores, rotas, middlewares, funções assíncronas.
 
 ###### tags: `back-end` `módulo 2` `nodeJS` `API REST` `desafio`
